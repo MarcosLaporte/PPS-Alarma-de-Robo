@@ -1,0 +1,90 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Registro</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card>
+    <img src="../../assets/login.png" width="80%">
+    <ion-card-content>
+      <form #signupForm="ngForm">
+        <div class="btns">
+          <ion-button expand="block" [disabled]="signupForm.valid" color="warning"
+            (click)="navCtrl.navigateForward('/login')">
+            Ingresar
+          </ion-button>
+          <ion-button expand="block" [disabled]="!signupForm.valid" color="danger" (click)="signup()">
+            Registrar
+          </ion-button>
+        </div>
+
+        <ion-grid>
+          <ion-row>
+            <ion-col>
+              <ion-item>
+                <ion-input label="Correo electrónico" [clearInput]="true" labelPlacement="stacked"
+                  placeholder="tucorreo@ejemplo.com" type="email" errorText="Correo inválido" [(ngModel)]="email"
+                  name="email" required></ion-input>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col size="6">
+              <ion-item>
+                <ion-input label="Apellido" labelPlacement="stacked" type="text" [(ngModel)]="lastName" name="lastName"
+                  required (keypress)="filterInput($event)">
+                </ion-input>
+              </ion-item>
+            </ion-col>
+            <ion-col size="6">
+              <ion-item>
+                <ion-input label="Nombre" labelPlacement="stacked" type="text" [(ngModel)]="name" name="name" required
+                  (keypress)="filterInput($event)">
+                </ion-input>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              <ion-radio-group class="type-group" [(ngModel)]="this.type" name="type" required>
+                <ion-item><ion-radio value='admin' justify="space-between">ADMIN</ion-radio></ion-item>
+                <ion-item><ion-radio value='tester' justify="space-between">TESTER</ion-radio></ion-item>
+                <ion-item><ion-radio value='invitado' justify="space-between">INVITADO</ion-radio></ion-item>
+                <ion-item><ion-radio value='usuario' justify="space-between">USUARIO</ion-radio></ion-item>
+              </ion-radio-group>
+            </ion-col>
+            <ion-col style="border-left: grey 1px solid;" size="auto">
+              <ion-radio-group class="gender-group" [(ngModel)]="this.gender" name="gender" required>
+                <ion-item>
+                  <ion-radio value="femenino" aria-label="femenino">F</ion-radio>
+                </ion-item>
+                <ion-item>
+                  <ion-radio value="masculino" aria-label="masculino">M</ion-radio>
+                </ion-item>
+              </ion-radio-group>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col size="6">
+              <ion-item>
+                <ion-input label="Reinigrese la contraseña" [clearOnEdit]="false" labelPlacement="stacked"
+                  type="password" [(ngModel)]="passCheck" name="passCheck" required>
+                  <ion-input-password-toggle slot="end"></ion-input-password-toggle>
+                </ion-input>
+              </ion-item>
+            </ion-col>
+            <ion-col size="6">
+              <ion-item>
+                <ion-input label="Contraseña" [clearOnEdit]="false" labelPlacement="stacked" type="password"
+                  [(ngModel)]="password" name="password" required>
+                  <ion-input-password-toggle slot="end"></ion-input-password-toggle>
+                </ion-input>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </form>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

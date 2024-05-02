@@ -1,0 +1,58 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Inicio de Sesión</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-fab slot="fixed" vertical="top" horizontal="start">
+    <ion-fab-button id="list-btn" color="light">
+      <ion-icon name="man"></ion-icon>
+    </ion-fab-button>
+    <ion-fab-list side="end">
+      <ion-fab-button color="light" (click)="quickFill('admin@admin.com', '111111')">
+        A
+      </ion-fab-button>
+      <ion-fab-button color="light" (click)="quickFill('invitado@invitado.com', '222222')">
+        I
+      </ion-fab-button>
+      <ion-fab-button color="light" (click)="quickFill('usuario@usuario.com', '333333')">
+        U
+      </ion-fab-button>
+      <ion-fab-button color="light" (click)="quickFill('anonimo@anonimo.com', '444444')">
+        An
+      </ion-fab-button>
+      <ion-fab-button color="light" (click)="quickFill('tester@tester.com', '555555')">
+        T
+      </ion-fab-button>
+    </ion-fab-list>
+  </ion-fab>
+
+  <ion-card class="ion-padding">
+    <ion-card-content class="ion-no-padding">
+      <form #loginForm="ngForm">
+        <div class="btns">
+          <ion-button expand="block" [disabled]="!loginForm.valid" color="danger" (click)="login()">
+            Ingresar
+          </ion-button>
+          <ion-button expand="block" [disabled]="loginForm.valid" color="warning"
+            (click)="navCtrl.navigateForward('/signup')">
+            Registrarse
+          </ion-button>
+        </div>
+        <ion-item>
+          <ion-input label="Contraseña" [clearOnEdit]="false" labelPlacement="stacked"
+            helperText="Entre 6 y 20 caracteres." type="password" [(ngModel)]="password" name="password" required>
+            <ion-input-password-toggle slot="end"></ion-input-password-toggle>
+          </ion-input>
+        </ion-item>
+        <img src="../../assets/login.png" width="100%">
+        <ion-item>
+          <ion-input label="Correo electrónico" [clearInput]="true" labelPlacement="stacked"
+            placeholder="tucorreo@ejemplo.com" type="email" errorText="Correo inválido" [(ngModel)]="email" name="email"
+            required></ion-input>
+        </ion-item>
+      </form>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

@@ -1,0 +1,18 @@
+ion-fab {
+  margin-left: 10px;
+  margin-top: 10px;
+}
+
+ion-content ion-card {
+  height: -webkit-fill-available;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+
+  .btns {
+    display: flex;
+    ion-button {
+      width: 50%;
+    }
+  }
+}
