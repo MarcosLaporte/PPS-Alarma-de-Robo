@@ -1,27 +1,36 @@
-#container {
-  text-align: center;
+.container {
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
 
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
-}
+  ion-card-title {
+    font-size: 7.5vw;
+  }
+  ion-card-content {
+    font-size: 5vw;
+  }
 
-#container strong {
-  font-size: 20px;
-  line-height: 26px;
-}
+  .options {
+    height: 100%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
 
-#container p {
-  font-size: 16px;
-  line-height: 22px;
+    ion-button {
+      flex: 1;
 
-  color: #8c8c8c;
+      .button-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
 
-  margin: 0;
-}
-
-#container a {
-  text-decoration: none;
+        span {
+          margin-top: 25px;
+          font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+          font-size: xxx-large;
+        }
+      }
+    }
+  }
 }

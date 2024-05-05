@@ -1,20 +1,21 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
+    <ion-title>Alarma de robo</ion-title>
+    <ion-buttons *ngIf="userInSession" slot="primary">
+      <ion-button fill="outline" (click)="signOut()"> Cerrar sesión </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
-</ion-content>
+<div class="container bg-img">
+  <ng-container *ngIf="userInSession; else noUser">
+    To continue...
+  </ng-container>
+  <ng-template #noUser>
+    <ion-card style="align-content: center;" class="ion-padding ion-margin">
+      <ion-card-content>No podemos proteger su teléfono si no sabemos quién es.</ion-card-content>
+      <ion-card-title>Usuario no registrado.</ion-card-title>
+      <ion-button expand="block" color="danger" (click)="navCtrl.navigateBack('/login')">Identifíquese</ion-button>
+    </ion-card>
+  </ng-template>
+</div>

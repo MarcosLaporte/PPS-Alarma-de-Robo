@@ -11,7 +11,6 @@ import { NgxSpinnerService } from 'ngx-spinner';
   styleUrls: ['./login.page.scss'],
 })
 export class LoginPage {
-  protected signupPage = SignupPage
 
   email: string = "";
   password: string = "";

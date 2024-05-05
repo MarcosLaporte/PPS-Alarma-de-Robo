@@ -4,25 +4,25 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <ion-fab slot="fixed" vertical="top" horizontal="start">
-    <ion-fab-button id="list-btn" color="light">
+<div class="container bg-img">
+  <ion-fab slot="fixed" vertical="top" horizontal="start" class="ion-padding-top">
+    <ion-fab-button id="list-btn" color="tertiary">
       <ion-icon name="man"></ion-icon>
     </ion-fab-button>
-    <ion-fab-list side="end">
-      <ion-fab-button color="light" (click)="quickFill('admin@admin.com', '111111')">
+    <ion-fab-list side="bottom">
+      <ion-fab-button color="dark" (click)="quickFill('admin@admin.com', '111111')">
         A
       </ion-fab-button>
-      <ion-fab-button color="light" (click)="quickFill('invitado@invitado.com', '222222')">
+      <ion-fab-button color="dark" (click)="quickFill('invitado@invitado.com', '222222')">
         I
       </ion-fab-button>
-      <ion-fab-button color="light" (click)="quickFill('usuario@usuario.com', '333333')">
+      <ion-fab-button color="dark" (click)="quickFill('usuario@usuario.com', '333333')">
         U
       </ion-fab-button>
-      <ion-fab-button color="light" (click)="quickFill('anonimo@anonimo.com', '444444')">
+      <ion-fab-button color="dark" (click)="quickFill('anonimo@anonimo.com', '444444')">
         An
       </ion-fab-button>
-      <ion-fab-button color="light" (click)="quickFill('tester@tester.com', '555555')">
+      <ion-fab-button color="dark" (click)="quickFill('tester@tester.com', '555555')">
         T
       </ion-fab-button>
     </ion-fab-list>
@@ -46,7 +46,9 @@
             <ion-input-password-toggle slot="end"></ion-input-password-toggle>
           </ion-input>
         </ion-item>
-        <img src="../../assets/login.png" width="100%">
+        <div class="img" style="display: flex; justify-content: center;">
+          <img src="../../assets/login.png" width="60%">
+        </div>
         <ion-item>
           <ion-input label="Correo electrónico" [clearInput]="true" labelPlacement="stacked"
             placeholder="tucorreo@ejemplo.com" type="email" errorText="Correo inválido" [(ngModel)]="email" name="email"
@@ -55,4 +57,4 @@
       </form>
     </ion-card-content>
   </ion-card>
-</ion-content>
+</div>

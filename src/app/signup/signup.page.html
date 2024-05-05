@@ -4,21 +4,10 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
+<div class="container bg-img">
   <ion-card>
-    <img src="../../assets/login.png" width="80%">
     <ion-card-content>
       <form #signupForm="ngForm">
-        <div class="btns">
-          <ion-button expand="block" [disabled]="signupForm.valid" color="warning"
-            (click)="navCtrl.navigateForward('/login')">
-            Ingresar
-          </ion-button>
-          <ion-button expand="block" [disabled]="!signupForm.valid" color="danger" (click)="signup()">
-            Registrar
-          </ion-button>
-        </div>
-
         <ion-grid>
           <ion-row>
             <ion-col>
@@ -84,7 +73,17 @@
             </ion-col>
           </ion-row>
         </ion-grid>
+
+        <div class="btns">
+          <ion-button expand="block" [disabled]="signupForm.valid" color="warning"
+            (click)="navCtrl.navigateForward('/login')">
+            Ingresar
+          </ion-button>
+          <ion-button expand="block" [disabled]="!signupForm.valid" color="danger" (click)="signup()">
+            Registrar
+          </ion-button>
+        </div>
       </form>
     </ion-card-content>
   </ion-card>
-</ion-content>
+</div>
