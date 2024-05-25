@@ -1,36 +1,108 @@
 .container {
   height: 100%;
   display: flex;
-  flex-wrap: wrap;
   align-items: center;
+  justify-content: center;
 
-  ion-card-title {
-    font-size: 7.5vw;
-  }
-  ion-card-content {
-    font-size: 5vw;
-  }
-
-  .options {
-    height: 100%;
-    padding: 20px;
-    display: flex;
+  @media (orientation: portrait) {
     flex-direction: column;
 
     ion-button {
-      flex: 1;
+      width: 75vw;
 
-      .button-content {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-
-        span {
-          margin-top: 25px;
-          font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-          font-size: xxx-large;
-        }
+      img {
+        width: 100%;
       }
     }
+  }
+
+  @media (orientation: landscape) {
+    flex-direction: row;
+
+    ion-button {
+      height: 75vh;
+
+      img {
+        height: 100%;
+      }
+    }
+  }
+
+  .wobble {
+    -webkit-animation: wobble-hor-top 0.8s ease-in-out infinite;
+    animation: wobble-hor-top 0.8s ease-in-out infinite;
+  }
+}
+
+/* BELL ANIMATION */
+@-webkit-keyframes wobble-hor-top {
+
+  0%,
+  100% {
+    -webkit-transform: translateX(0%);
+    transform: translateX(0%);
+    -webkit-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+  }
+
+  15% {
+    -webkit-transform: translateX(-30px) rotate(6deg);
+    transform: translateX(-30px) rotate(6deg);
+  }
+
+  30% {
+    -webkit-transform: translateX(15px) rotate(-6deg);
+    transform: translateX(15px) rotate(-6deg);
+  }
+
+  45% {
+    -webkit-transform: translateX(-15px) rotate(3.6deg);
+    transform: translateX(-15px) rotate(3.6deg);
+  }
+
+  60% {
+    -webkit-transform: translateX(9px) rotate(-2.4deg);
+    transform: translateX(9px) rotate(-2.4deg);
+  }
+
+  75% {
+    -webkit-transform: translateX(-6px) rotate(1.2deg);
+    transform: translateX(-6px) rotate(1.2deg);
+  }
+}
+
+@keyframes wobble-hor-top {
+
+  0%,
+  100% {
+    -webkit-transform: translateX(0%);
+    transform: translateX(0%);
+    -webkit-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+  }
+
+  15% {
+    -webkit-transform: translateX(-30px) rotate(6deg);
+    transform: translateX(-30px) rotate(6deg);
+  }
+
+  30% {
+    -webkit-transform: translateX(15px) rotate(-6deg);
+    transform: translateX(15px) rotate(-6deg);
+  }
+
+  45% {
+    -webkit-transform: translateX(-15px) rotate(3.6deg);
+    transform: translateX(-15px) rotate(3.6deg);
+  }
+
+  60% {
+    -webkit-transform: translateX(9px) rotate(-2.4deg);
+    transform: translateX(9px) rotate(-2.4deg);
+  }
+
+  75% {
+    -webkit-transform: translateX(-6px) rotate(1.2deg);
+    transform: translateX(-6px) rotate(1.2deg);
   }
 }
