@@ -2,7 +2,7 @@ import type { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
   appId: 'com.pp3.app',
-  appName: 'PPS-PP-App3',
+  appName: 'Alarma de Robo',
   webDir: 'www',
   plugins: {
     SplashScreen: {
