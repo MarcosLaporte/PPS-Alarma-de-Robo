@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController } from '@ionic/angular';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-splash',
@@ -7,14 +8,16 @@ import { NavController } from '@ionic/angular';
   styleUrls: ['./splash.page.scss'],
 })
 export class SplashPage {
-  constructor(private navCtrl: NavController) {
+  constructor(private navCtrl: NavController, private auth: AuthService) {
     setTimeout(() => {
       const audio = new Audio('../../assets/sounds/bing.mp3');
       audio.play();
-    }, 1650);
+    }, 3150);
+    
+    const redirRoute = auth.UserInSession ? '/home' : '/login';
     setTimeout(() => {
-      navCtrl.navigateRoot('/login');
+      navCtrl.navigateRoot([redirRoute]);
       history.pushState(null, '');
-    }, 3050);
+    }, 4650);
   }
 }

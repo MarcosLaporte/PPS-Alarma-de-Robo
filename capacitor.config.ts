@@ -7,8 +7,8 @@ const config: CapacitorConfig = {
   plugins: {
     SplashScreen: {
       launchAutoHide: true,
-      launchFadeOutDuration: 500,
-      launchShowDuration: 1000,
+      launchFadeOutDuration: 2000,
+      launchShowDuration: 2000,
       splashFullScreen: false
     }
   }
