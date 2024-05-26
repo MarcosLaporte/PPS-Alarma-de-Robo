@@ -8,20 +8,7 @@
 </ion-header>
 
 <div class="container bg-img">
-  <ion-button (click)="toggleAlarm()" [color]="activated ? 'danger' : 'tertiary'">
-    <img src="../../assets/alarm.png" [class]="activated ? 'wobble' : ''">
+  <ion-button (click)="toggleAlarm()" color="danger">
+    <img src="../../assets/alarm.png" [class]="isActivated ? 'wobble' : ''">
   </ion-button>
-  <!-- <ion-card style="width: 80%; display: flex; flex-direction: column;">
-    <ion-text style="font-size: xx-large;">X: {{x | number: '2.2-5'}}</ion-text>
-    <ion-text style="font-size: xx-large;">Y: {{y | number: '2.2-5'}}</ion-text>
-    <ion-text style="font-size: xx-large;">Z: {{z | number: '2.2-5'}}</ion-text>
-    <br>
-    <ion-text style="font-size: xx-large;">Alpha: {{alpha | number: '2.2-5'}}</ion-text>
-    <ion-text style="font-size: xx-large;">Beta: {{beta | number: '2.2-5'}}</ion-text>
-    <ion-text style="font-size: xx-large;">Gamma: {{gamma | number: '2.2-5'}}</ion-text>
-  </ion-card> -->
-  <ion-card style="width: 80%; display: flex; flex-direction: column;">
-    <ion-text style="font-size: xx-large;">Position: {{position}}</ion-text>
-    <ion-text style="font-size: xx-large;">Tilt: {{tilt}}</ion-text>
-  </ion-card>
 </div>

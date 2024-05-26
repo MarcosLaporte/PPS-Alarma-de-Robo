@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { AuthService } from '../services/auth.service';
 import { NavController } from '@ionic/angular';
 import { ToastError, ToastSuccess } from '../utils';
-import { SignupPage } from '../signup/signup.page';
 import { NgxSpinnerService } from 'ngx-spinner';
 
 @Component({
@@ -26,11 +25,12 @@ export class LoginPage {
     try {
       await this.auth.signInToFirebase(this.email, this.password)
 
+      const auxPass = this.password;
       this.email = "";
       this.password = "";
       this.spinner.hide();
-      ToastSuccess.fire('Operación realizada con éxito.')
-      this.navCtrl.navigateBack('/home')
+      ToastSuccess.fire('Operación realizada con éxito.');
+      this.navCtrl.navigateRoot(['/home'], { state: { userPass: auxPass } });
     } catch (error: any) {
       this.spinner.hide();
       ToastError.fire('Ups! Algo salió mal.', error.message);

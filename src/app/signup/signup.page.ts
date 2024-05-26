@@ -47,13 +47,15 @@ export class SignupPage {
       this.name = this.capitalize(this.name);
       this.lastName = this.capitalize(this.lastName);
       await this.auth.createAccount(this.name, this.lastName, this.email, this.type, this.gender, this.password);
+      
+      const auxPass = this.password;
       this.email = "";
       this.password = "";
       this.passCheck = "";
       this.gender = undefined;
       this.type = undefined;
       ToastSuccess.fire('Operación realizada con éxito.')
-      this.navCtrl.navigateBack('/home')
+      this.navCtrl.navigateRoot(['/home'], { state: { userPass: auxPass } });
     } catch (error: any) {
       this.spinner.show();
       ToastError.fire('Ups! Algo salió mal.', error.message);
