@@ -38,7 +38,7 @@ export class HomePage implements OnInit, OnDestroy {
   async ngOnInit() {
     await MySwal.fire({
       title: 'Atención',
-      html: 'Para un buen funcionamiento de la aplicación, <b>acueste el celular boca arriba</b>.',
+      html: '<h1>Para un buen funcionamiento de la aplicación, <b>acueste el celular boca arriba</b>.</h1>',
       icon: 'warning',
       showConfirmButton: true,
       confirmButtonText: 'Aceptar',
@@ -64,7 +64,10 @@ export class HomePage implements OnInit, OnDestroy {
         inputAttributes: {
           'aria-label': 'Ingrese su contraseña'
         },
+        showConfirmButton: true,
+        confirmButtonText: 'Desactivar',
         showCancelButton: true,
+        cancelButtonText: 'Cancelar',
         preConfirm: async (pass: string) => {
           if (this.isAudioPlaying) return null;
           if (pass === this.userPass) return true;
